@@ -1,0 +1,6 @@
+export const ADD_COMMENTS = 'ADD_COMMENTS';
+export const ADD_COMMENTS_FAILED = 'ADD_COMMENTS_FAILED'; 
+export const GET_COMMENTS = 'GET_COMMENTS'; 
+
+export const ADD_RECEIPTS = 'ADD_RECEIPT'; 
+export const ADD_RECEIPTS_FAILED = 'ADD_RECEIPT_FAILED'; 

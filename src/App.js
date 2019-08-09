@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import AppRouter from './routers/AppRouter';
+// import logo from './logo.svg';
+import {Provider} from 'react-redux';
+import {ConfigureStore} from './redux/configureStore';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const store = ConfigureStore()
+
+
+class App extends Component {
+  //in order to store the state you need to define state in constructor
+  
+  render() {
+    return (
+      <Provider store = {store}>
+          
+          <div className ="App">
+           
+           
+            <AppRouter />
+            
+
+          </div>
+        
+      </Provider>
+    );
+  }
 }
 
 export default App;
