@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { itemsFetchData } from '../actions/items';
+import { expensesFetchData } from '../actions/expense';
 import ReactTable from 'react-table'; 
 import Moment from 'react-moment';
 import axios from 'axios'; 
@@ -36,7 +36,7 @@ class Main extends Component {
     componentDidMount() {
         const API = 'http://localhost:3000/expenses?limit=25&offset=25'
         this.props.fetchData(API);
-        console.log(this.props.items)
+        console.log(this.props)
     }
 
 
@@ -162,15 +162,15 @@ class Main extends Component {
 const mapStateToProps = (state) => {
   
     return {
-        items: state.items,
-        hasErrored: state.itemsHasErrored,
-        isLoading: state.itemsIsLoading
+        items: state.expenses,
+        hasErrored: state.expensesHaveErrored,
+        isLoading: state.expensesAreLoading
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchData: (url) => dispatch(itemsFetchData(url))
+        fetchData: (url) => dispatch(expensesFetchData(url))
     };
 };
 

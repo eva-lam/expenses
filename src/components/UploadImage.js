@@ -1,39 +1,44 @@
 import React, {Component} from 'react'; 
-import axios from 'axios'; 
+import {connect} from 'react-redux'; 
+import {uploadReceipts} from '../actions/expense'; 
 
-const API = 'http://localhost:3000'
+
 class ImageUpload extends Component {
     state ={
         selectedFile: null,
-        id:null
     }
 
-    fileSelectedHandler = event=>{
-        console.log(event); 
+    HandleFileSelection = event =>{
         this.setState({
-            selectedFile:event.target.files[0],
-            id:event.target.files[0].id
+            selectedFiles: event.target.files,
         })
     }
 
-    fileUploadHander=()=>{
-        const ImageID = this.state.id; 
-        const fd = new FormData()
-        fd.append('image', this.state.selectedFile, this.state.selectedFile.name)
-        axios.post(`${API}/expenses/${ImageID}/receipts`,fd)
-            .then(res=>{
-                console.log('this is res'+ res); 
-            })
+    handleOnClick = () =>{
+        this.props.uploadReceipts(this.props.id, this.state.selectedFiles)
+        this.setState({selectedFiles:null})
     }
     
     render(){
         return(
             <div>
-                <input type="file" onChange={this.fileSelectedHandler}/>
-                <button onClick ={this.fileUploadHandler}>Upload</button>
+                <input type="file" multiple={true} onChange={this.fileSelectedHandler}/>
+                <br/>
+                <button disabled={this.state.selectedFiles?false:true} onClick ={this.handleOnClick}>Upload</button>
+                <br/>
+
+                {/* {this.props.images.map((image,index)=><img width={20} height={20} src={image} alt={image} key={index}/>)} */}
             </div>
         )
     }
+
+   
 }
 
-export default ImageUpload
+const mapDispatchToProps = (dispatch)=>{
+    return{
+        uploadReceipts:(id,files)=> dispatch(uploadReceipts(id,files))
+    }; 
+}; 
+
+export default connect(null,mapDispatchToProps)(ImageUpload); 

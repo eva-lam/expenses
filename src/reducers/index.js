@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import { items, itemsHasErrored, itemsIsLoading } from './items';
+import { expenses, expensesHaveErrored, expensesAreLoading } from './expense';
 export default combineReducers({
-    items,
-    itemsHasErrored,
-    itemsIsLoading
+    expenses,
+    expensesHaveErrored,
+    expensesAreLoading
 });

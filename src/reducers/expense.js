@@ -1,23 +1,23 @@
-export function itemsHasErrored(state = false, action) {
+export function expensesHaveErrored(state = false, action) {
     switch (action.type) {
-        case 'ITEMS_HAS_ERRORED':
+        case 'EXPENSES_HAVE_ERRORED':
             return action.hasErrored;
         default:
             return state;
     }
 }
-export function itemsIsLoading(state = false, action) {
+export function expensesAreLoading(state = false, action) {
     switch (action.type) {
-        case 'ITEMS_IS_LOADING':
+        case 'EXPENSES_ARE_LOADING':
             return action.isLoading;
         default:
             return state;
     }
 }
-export function items(state = [], action) {
+export function expenses(state = [], action) {
 
     switch (action.type) {
-        case 'ITEMS_FETCH_DATA_SUCCESS':
+        case 'EXPENSES_FETCH_DATA_SUCCESS':
             return action.items.expenses;
         default:
             return state;
