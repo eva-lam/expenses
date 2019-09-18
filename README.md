@@ -1,12 +1,10 @@
 ## How long did it take? 
-I did not go this in one sitting so on and off, probably couple of weeks.. 
 
 ## Which part was the hardest to implement? 
 
-
 ## What functionalities are you most proud of?
 
-
+## Overview
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
