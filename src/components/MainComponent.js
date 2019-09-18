@@ -6,7 +6,9 @@ import Moment from 'react-moment';
 import axios from 'axios'; 
 import Comment from '../components/CommentComponent';
 import ImageUpload from '../components/UploadImage'; 
-
+import Button from 'react-bootstrap/Button';
+// import {setLocale} from '../actions/locale'; 
+import { useTranslation, withTranslation} from 'react-i18next';
 
 import "react-table/react-table.css";
 
@@ -37,6 +39,8 @@ class Main extends Component {
         const API = 'http://localhost:3000/expenses?limit=25&offset=25'
         this.props.fetchData(API);
         console.log(this.props)
+    
+        
     }
 
 
@@ -66,7 +70,10 @@ class Main extends Component {
     }
     
     render() {
-       
+        const { t, i18n } = this.props;
+        const changeLanguage = lng => {
+            i18n.changeLanguage(lng);
+          };
         const columns=[
             {
                 Header:'Date',
@@ -140,7 +147,15 @@ class Main extends Component {
           
         return (
             
+           
             <div className='Main'>
+                <div>
+                    <Button onClick={() => changeLanguage('de')}>de</Button>
+                    
+                    <Button onClick={() => changeLanguage('en')}>en</Button>
+                </div>
+
+                <hr/>
                 
                 <ReactTable
                     columns={columns}
@@ -148,11 +163,8 @@ class Main extends Component {
                     sortable
                     filterable
                 >
-
                 </ReactTable>
-                
-               
-               
+                {/* <div>{t('description.part2')}</div> */}
             </div>
         );
     }
@@ -164,7 +176,8 @@ const mapStateToProps = (state) => {
     return {
         items: state.expenses,
         hasErrored: state.expensesHaveErrored,
-        isLoading: state.expensesAreLoading
+        isLoading: state.expensesAreLoading,
+        lang: state.locale.lang
     };
 };
 

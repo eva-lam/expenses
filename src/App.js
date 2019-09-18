@@ -4,29 +4,35 @@ import AppRouter from './routers/AppRouter';
 import {Provider} from 'react-redux';
 import {ConfigureStore} from './redux/configureStore';
 import './App.css';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const store = ConfigureStore()
 
 
 class App extends Component {
   //in order to store the state you need to define state in constructor
+
   
   render() {
+    
+  
+    
     return (
+    
       <Provider store = {store}>
-          
-          <div className ="App">
-           
-           
+  
+        
+        <div className ="App">
             <AppRouter />
-            
+        </div>
 
-          </div>
+        
         
       </Provider>
+   
     );
   }
 }
+
 
 export default App;

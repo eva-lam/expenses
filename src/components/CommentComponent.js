@@ -1,7 +1,7 @@
 import React, {Component} from 'react'; 
 import {createComment } from '../actions/expense'; 
 import {connect} from 'react-redux'; 
-
+import Button from 'react-bootstrap/Button';
 
 class Comment extends Component {
     constructor(props){
@@ -10,6 +10,7 @@ class Comment extends Component {
             message:''
         }
     }
+    
 
     handleOnClick = (event)=>{
         const {message}=this.state; 
@@ -22,13 +23,17 @@ class Comment extends Component {
         this.setState({[event.target.name]:event.target.value})
     }
 
+   
+
+
     render(){
-        
+    
         return(
             <div>
                 <input type="text" placeholder="your comment" name="message" value={this.state.message} onChange={this.dataChange.bind(this)}/>
                     <br/> 
-                <button onClick = {this.handleOnClick}>Submit</button>         
+                    
+                    <Button variant="outline-secondary" onClick = {this.handleOnClick}>Submit</Button>         
                <div> {this.props.message}</div>
 
             </div>

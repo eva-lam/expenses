@@ -1,6 +1,7 @@
 import React from 'react';
+import {FormattedMessage} from "react-intl"; 
 
-import {Container, Navbar, NavbarBrand } from 'reactstrap';
+import {Navbar} from 'reactstrap';
 
 class Header extends React.Component {
   constructor(props) {
@@ -17,11 +18,8 @@ class Header extends React.Component {
   render() {
     return (
       <Navbar color="dark" dark expand="md">
-        <Container>
-          <NavbarBrand>
-            <span><h1>Expense DashBoard</h1></span>
-          </NavbarBrand>
-        </Container>
+       
+        <h1><FormattedMessage id="nav.dashboard" defaultMessage="Expense Dashboard" /></h1>
       </Navbar>
     );
   }
