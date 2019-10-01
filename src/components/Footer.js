@@ -6,11 +6,7 @@ class Footer extends React.Component {
   render() {
     return (
       <footer>
-       
-        <Container>
- 
-        
-        </Container>
+        <Container/>
       </footer>
     )
   }

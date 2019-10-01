@@ -7,12 +7,8 @@ import Main from '../components/MainComponent';
 
 const ExpenseDashBoardPage = () => (
   <div>
-
-
     <Main/>
-   
     <Footer/>
- 
   </div>
 )
 

@@ -7,7 +7,7 @@ class Comment extends Component {
     constructor(props){
         super(props)
         this.state={  
-            message:''
+            message:'',
         }
     }
     
@@ -15,8 +15,8 @@ class Comment extends Component {
     handleOnClick = (event)=>{
         const {message}=this.state; 
         this.props.createComment(this.props.id, message)
-        console.log(this.props.createComment(this.props.id))
         this.setState({message:''})
+    
     }
 
     dataChange =(event)=>{
@@ -35,6 +35,7 @@ class Comment extends Component {
                     
                     <Button variant="outline-secondary" onClick = {this.handleOnClick}>Submit</Button>         
                <div> {this.props.message}</div>
+             
 
             </div>
             

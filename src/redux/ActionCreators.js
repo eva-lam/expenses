@@ -17,7 +17,7 @@ export const getComment = ()=>({
 })
 
 export const postComment = ( id, name, comment)=>(dispatch)=>{
-
+    const { REACT_APP_API_SERVER } = process.env;
     const newFeedback = {
         id:id,
         name:name,
@@ -26,7 +26,7 @@ export const postComment = ( id, name, comment)=>(dispatch)=>{
     }
     //update an expense 
 
-    return fetch(`${process.env.PLEO_API_SERVER}/expenses/${id}`,{
+    return fetch(`${REACT_APP_API_SERVER}/expenses/${id}`,{
         method:'POST',
         body:JSON.stringify(newFeedback),
         headers:{

@@ -1,45 +1,47 @@
 import React, {Component} from 'react'; 
-import {connect} from 'react-redux'; 
-import {uploadReceipts} from '../actions/expense'; 
-import Button from 'react-bootstrap/Button';
+import { connect } from 'react-redux';
+import { uploadReceipts } from '../actions/expense';
+import Button from 'react-bootstrap/Button'
 
 
 class ImageUpload extends Component {
-    state ={
-        selectedFile: null,
+    state = {
+        selectedfile: null,
+        uploadedFile:null
     }
 
-    HandleFileSelection = event =>{
+    handleFileSelection = event =>{
         this.setState({
-            selectedFiles: event.target.files,
+            selectedfile: event.target.files[0],
         })
     }
-
-    handleOnClick = () =>{
-        this.props.uploadReceipts(this.props.id, this.state.selectedFiles)
-        this.setState({selectedFiles:null})
+    //handle Single Upload 
+    handleOnClick = () => {
+ 
+        this.props.uploadReceipts(this.props.id, this.state.selectedfile)
+        //clear Fields After Upload 
+        this.setState({ selectedfile: null })
     }
     
     render(){
         return(
             <div>
-                <input type="file" multiple={true} onChange={this.fileSelectedHandler}/>
+                <input type="file" name="myFile" multiple={true} onChange={this.handleFileSelection}/>
                 <br/>
-                <Button variant="dark" disabled={this.state.selectedFiles?false:true} onClick ={this.handleOnClick}>Upload</Button>
+                <Button variant="outline-secondary" disabled={this.state.selectedfile ? false: true} onClick={this.handleOnClick}>Upload</Button>
                 <br/>
-
-                {/* {this.props.images.map((image,index)=><img width={20} height={20} src={image} alt={image} key={index}/>)} */}
+                {
+                    this.props.images.map((image, index)=> <img width={20} height={20} src={image} alt={image} key={index} />)
+                }
             </div>
         )
     }
-
-   
 }
 
-const mapDispatchToProps = (dispatch)=>{
-    return{
-        uploadReceipts:(id,files)=> dispatch(uploadReceipts(id,files))
-    }; 
-}; 
+const mapDispatchToProps = (dispatch) => {
+    return {
+        uploadReceipts: (id, files) => dispatch(uploadReceipts(id, files))
+    };
+};
 
-export default connect(null,mapDispatchToProps)(ImageUpload); 
+export default connect(null, mapDispatchToProps)(ImageUpload);

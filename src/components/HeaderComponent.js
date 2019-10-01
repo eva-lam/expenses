@@ -1,5 +1,5 @@
 import React from 'react';
-import {FormattedMessage} from "react-intl"; 
+
 
 import {Navbar} from 'reactstrap';
 
@@ -13,13 +13,13 @@ class Header extends React.Component {
     };
   }
 
-  
 
   render() {
     return (
       <Navbar color="dark" dark expand="md">
+    
+        <h1>Expense Dashboard</h1>
        
-        <h1><FormattedMessage id="nav.dashboard" defaultMessage="Expense Dashboard" /></h1>
       </Navbar>
     );
   }
