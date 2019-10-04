@@ -10,21 +10,16 @@ class Comment extends Component {
             message:'',
         }
     }
-    
 
     handleOnClick = (event)=>{
         const {message}=this.state; 
         this.props.createComment(this.props.id, message)
         this.setState({message:''})
-    
     }
 
     dataChange =(event)=>{
         this.setState({[event.target.name]:event.target.value})
     }
-
-   
-
 
     render(){
     

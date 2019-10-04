@@ -98,18 +98,11 @@ export const uploadReceipts =(id,file)=>async(dispatch)=>{
               'Content-Type': 'multipart/form-data'
             }
         })
-                    //   {onUploadProgress:progressEvent=>{
-                    //        console.log('Upload Progress:'+(progressEvent.loaded/progressEvent.total*100)+'%')
-                    //     }
-                    // })
-                    // .then(res=>{
-                    //     console.log(res); 
-                    // })
         
-       console.log('response is ',response)
+       //console.log('response is ',response)
         if(response.status === 200){
-            console.log('after axios.post- response.data is as follow',response.data)
-            console.log(response.data.receipts[0].url)
+            //console.log('after axios.post- response.data is as follow',response.data)
+            //console.log(response.data.receipts[0].url)
             const filePaths = response.data.receipts.map((name)=>`${REACT_APP_API_SERVER}/${name.url}`)
             // console.log('filepaths',filePaths)
             dispatch(uploadReceiptsSuccess(id,filePaths))
@@ -117,7 +110,7 @@ export const uploadReceipts =(id,file)=>async(dispatch)=>{
             throw new Error('UPLOAD_RECEIPTS_FAILED')
         }
     }catch(e){
-        console.error(e)
+        //console.error(e)
         dispatch(expensesHaveErrored(true))
     }
 }

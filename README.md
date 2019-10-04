@@ -1,8 +1,13 @@
 ## How long did it take? 
+I did not do this in one seating as I have many other projects in progress. 
+Instead, I did this for fun during the weekends. 
 
 ## Which part was the hardest to implement? 
 
+The part that was the hardest to implement was the upload files. There was a couple bugs in the api server file. ( line 78 in expenses.ts && line 70 remove the 's' from receipt) Thus the formdata was not passing the way it should and it took longer than it should to implement that part. 
+
 ## What functionalities are you most proud of?
+There are several options in rolling out the table. At the end I have chosen React-table for its scalability and responsive nature. I also successfully implemented Redux though I could have gone for an easier option such as React Hook. 
 
 ## Overview
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
