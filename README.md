@@ -1,3 +1,11 @@
+Expense Dashboard
+
+## About this project
+
+This is an expense dashboard that simulates how userinterface could look like when users log into an online portal to check their credit card usage. Through this platform, users can add comments on a listed expense, execute filter search, as well as add receipt image(s) when needed.
+
+This project uses the data provided and developed by pleo.
+
 ## How long did it take?
 
 It took me about two weeks to finish all implementations.
@@ -8,16 +16,20 @@ The part that was the hardest to implement was the upload files. There was a cou
 
 ## What functionalities are you most proud of?
 
-There are several options in rolling out the table. At the end I have chosen React-table for its scalability and responsive nature. I also successfully implemented Redux though I could have gone for an easier option such as React Hook.
+There are several options in creating the table. At the end I have chosen React-table for its scalability and responsive nature. I am most proud of implementing state management using Redux.
 
-## functionalities
+## Current Functionalities
 
 - User can list expenses
 - User can add a comment on an expense
 - User can filter on expenses (client side filters)
 - User can add a receipt image on an expense
 
-## Overview
+## Future Development
+
+The design of the web page is yet to be polished. And the next step I will be focusing on making it visually appealing.
+
+## Technical Overview
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
