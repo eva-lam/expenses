@@ -2,7 +2,7 @@ Expense Dashboard
 
 ## About this project
 
-This is an expense dashboard that simulates how userinterface could look like when users log into an online portal to check their credit card usage. Through this platform, users can add comments on a listed expense, execute filter search, as well as add receipt image(s) when needed.
+This is an expense dashboard that simulates how user interface could look like when users log into an online portal to check their credit card usage. Through this platform, users can add comments on a listed expense, execute filter search, as well as add receipt image(s) when needed.
 
 This project uses the data provided and developed by pleo.
 
@@ -10,7 +10,7 @@ This project uses the data provided and developed by pleo.
 
 It took me about two weeks to finish all implementations.
 
-## Which part was the hardest to implement?
+## Challenges in Implementation
 
 The part that was the hardest to implement was the upload files. There was a couple bugs in the api server file. ( line 78 in expenses.ts && line 70 remove the 's' from receipt) Thus the form data was not passing the way it should and it took longer than it should to implement that part.
 
