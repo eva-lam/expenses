@@ -4,11 +4,7 @@ Expense Dashboard
 
 This is an expense dashboard that simulates how user interface could look like when users log into an online portal to check their credit card usage. Through this platform, users can add comments on a listed expense, execute filter search, as well as add receipt image(s) when needed.
 
-This project uses the data provided and developed by pleo.
-
-## How long did it take?
-
-It took me about two weeks to finish all implementations.
+This project uses the data provided and developed by [pleo]
 
 ## Challenges in Implementation
 
@@ -99,3 +95,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+[pleo]: https://www.pleo.io/de/
